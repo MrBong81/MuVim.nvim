@@ -52,3 +52,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- NOTE: My keybinds
+vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Move focus to the left window' })
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Move focus to the left window' })
