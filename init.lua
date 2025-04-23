@@ -95,7 +95,6 @@ vim.g.have_nerd_font = true
 
 -- NOTE: add rtools to the path to allow building nvimcom
 vim.env.PATH = 'C:\\RBuildTools\\4.0\\mingw64\\bin;C:\\RBuildTools\\4.0\\usr\\bin;' .. vim.env.PATH
-print('C:\\RBuildTools\\4.0\\mingw64\\bin;C:\\RBuildTools\\4.0\\usr\\bin;' .. vim.env.PATH)
 
 -- [[ Setting options ]]
 require 'options'
