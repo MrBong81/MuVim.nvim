@@ -88,10 +88,14 @@ P.S. You can delete this when you're done too. It's your config now! :)
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = 'ò'
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+
+-- NOTE: add rtools to the path to allow building nvimcom
+vim.env.PATH = 'C:\\RBuildTools\\4.0\\mingw64\\bin;C:\\RBuildTools\\4.0\\usr\\bin;' .. vim.env.PATH
+print('C:\\RBuildTools\\4.0\\mingw64\\bin;C:\\RBuildTools\\4.0\\usr\\bin;' .. vim.env.PATH)
 
 -- [[ Setting options ]]
 require 'options'
