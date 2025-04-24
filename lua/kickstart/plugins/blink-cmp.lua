@@ -4,6 +4,7 @@ return {
     event = 'VimEnter',
     version = '1.*',
     dependencies = {
+
       -- Snippet Engine
       {
         'L3MON4D3/LuaSnip',
@@ -27,9 +28,12 @@ return {
           --     require('luasnip.loaders.from_vscode').lazy_load()
           --   end,
           -- },
+          --
         },
+
         opts = {},
       },
+
       'folke/lazydev.nvim',
     },
     --- @module 'blink.cmp'
@@ -77,8 +81,10 @@ return {
 
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
+
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          --
         },
       },
 

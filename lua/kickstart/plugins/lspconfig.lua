@@ -235,6 +235,12 @@ return {
             },
           },
         },
+        r_language_server = {
+          cmd = { 'R', '--no-echo', '-e', 'languageserver::run()' },
+          filetypes = { 'r', 'rmd', 'quarto' },
+          -- capabilities = {},
+          settings = {},
+        },
       }
 
       -- Ensure the servers and tools above are installed
