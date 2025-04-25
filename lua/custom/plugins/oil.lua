@@ -15,7 +15,7 @@ return {
         -- open oil with "-"
         vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' }),
         -- open oil in floating window
-        vim.keymap.set('n', '<leader>-', require('oil').toggle_float, { desc = 'Open parent dir Float' }),
+        vim.keymap.set('n', '<leader>-', require('oil').toggle_float, { desc = 'Open parent directory' }),
       }
     end,
   },
