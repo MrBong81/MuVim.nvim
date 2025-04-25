@@ -8,7 +8,7 @@ return {
       -- Create a table with the options to be passed to setup()
       ---@type RConfigUserOpts
       local opts = {
-        -- R_args = {"--quiet", "--no-save"},
+        R_args = { '--quiet', '--no-save' },
 
         -- make sure that the console is on the right
         rconsole_width = 57,
@@ -19,6 +19,30 @@ return {
 
         -- enable autoquit of r when quitting nvim
         auto_quit = true,
+        -- use browser as default pdf viewer (OS default)
+        pdfviewer = '',
+
+        -- use hook to configure specific keybinds and load options
+        hook = {
+          on_filetype = function()
+            -- FIX: make it work only when opening rmd, quarto etc...
+            -- require('r.send').cmd 'Sys.setenv(RSTUDIO_PANDOC = "C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools")'
+
+            -- vim.api.nvim_buf_set_keymap(0, 'n', '<LocalLeader>lp', function()
+            --   require('r.send').cmd 'Sys.setenv(RSTUDIO_PANDOC = "C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools")'
+            -- end, { { desc = 'TESTTEST' } })
+
+            vim.g.RSTUDIO_PANDOC = 'C:\\Users\\Ermenegisto\\AppData\\Local\\nvim\\scripts\\rmd_load_pandoc'
+
+            vim.api.nvim_buf_set_keymap(
+              0,
+              'n',
+              '<LocalLeader>pl',
+              '<Cmd>RSourceDir ' .. vim.g.RSTUDIO_PANDOC .. '<CR>',
+              { desc = '[P]andoc [L]oad for rmd and quarto' }
+            )
+          end,
+        },
         objbr_mappings = { -- Object browser keymap
           c = 'class', -- Call R functions
           ['<localleader>gg'] = 'head({object}, n = 15)', -- Use {object} notation to write arbitrary R code.
