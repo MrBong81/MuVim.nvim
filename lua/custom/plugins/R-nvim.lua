@@ -52,7 +52,11 @@ return {
         },
         objbr_mappings = { -- Object browser keymap
           c = 'class', -- Call R functions
-          ['<localleader>gg'] = 'head({object}, n = 15)', -- Use {object} notation to write arbitrary R code.
+
+          -- Use {object} notation to write arbitrary R code.
+          ['<localleader>gg'] = 'head({object}, n = 15)',
+          ['<localleader>ls'] = 'ls({object})',
+
           v = function()
             require('r.browser').toggle_view()
           end,
