@@ -22,6 +22,9 @@ return {
         -- use browser as default pdf viewer (OS default)
         pdfviewer = '',
 
+        -- disable highlighting of the terminal
+        hl_term = false,
+
         -- use hook to configure specific keybinds and load options
         hook = {
           on_filetype = function()
@@ -41,6 +44,8 @@ return {
               '<Cmd>RSourceDir ' .. vim.g.RSTUDIO_PANDOC .. '<CR>',
               { desc = '[P]andoc [L]oad for rmd and quarto' }
             )
+
+            vim.api.nvim_buf_set_keymap(0, 't', '<C-n>', '<Esc>', { desc = 'Quit Terminal' })
           end,
         },
         objbr_mappings = { -- Object browser keymap
