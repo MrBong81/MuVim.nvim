@@ -35,8 +35,10 @@ return {
             --   require('r.send').cmd 'Sys.setenv(RSTUDIO_PANDOC = "C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools")'
             -- end, { { desc = 'TESTTEST' } })
 
+            -- PATH: path to pandoc, to enable markdown actions
             vim.g.RSTUDIO_PANDOC = 'C:\\Users\\Ermenegisto\\AppData\\Local\\nvim\\scripts\\rmd_load_pandoc'
 
+            -- KEYMAP: some keymaps for R-nvim
             vim.api.nvim_buf_set_keymap(
               0,
               'n',

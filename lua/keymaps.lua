@@ -51,7 +51,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- NOTE: MY KEYBINDS
+-- KEYMAP: MY KEYBINDS
 --
 -- # NORMAL MODE
 -- vim.keymap.set('n', '<leader>ls', '<cmd> source %<CR>', { desc = '[L]ua [S]ource' })

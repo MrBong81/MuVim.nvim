@@ -12,6 +12,7 @@ return {
 
     config = function()
       require('oil').setup {
+        -- KEYMAP: Oil Keymaps
         -- open oil with "-"
         vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' }),
         -- open oil in floating window
