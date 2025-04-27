@@ -10,6 +10,9 @@ return {
       local opts = {
         R_args = { '--quiet', '--no-save' },
 
+        -- disable default creation of keybindings
+        user_maps_only = false,
+
         -- make sure that the console is on the right
         rconsole_width = 57,
         min_editor_width = 18,
@@ -28,26 +31,42 @@ return {
         -- use hook to configure specific keybinds and load options
         hook = {
           on_filetype = function()
-            -- FIX: make it work only when opening rmd, quarto etc...
-            -- require('r.send').cmd 'Sys.setenv(RSTUDIO_PANDOC = "C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools")'
-
-            -- vim.api.nvim_buf_set_keymap(0, 'n', '<LocalLeader>lp', function()
-            --   require('r.send').cmd 'Sys.setenv(RSTUDIO_PANDOC = "C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools")'
-            -- end, { { desc = 'TESTTEST' } })
+            --
 
             -- PATH: path to pandoc, to enable markdown actions
             vim.g.RSTUDIO_PANDOC = 'C:\\Users\\Ermenegisto\\AppData\\Local\\nvim\\scripts\\rmd_load_pandoc'
 
             -- KEYMAP: some keymaps for R-nvim
-            vim.api.nvim_buf_set_keymap(
-              0,
-              'n',
-              '<LocalLeader>pl',
-              '<Cmd>RSourceDir ' .. vim.g.RSTUDIO_PANDOC .. '<CR>',
-              { desc = '[P]andoc [L]oad for rmd and quarto' }
-            )
 
+            -- QUIT
+            vim.api.nvim_buf_set_keymap(0, 'n', '<LocalLeader>sq', '<Plug>RClose', { desc = 'Close terminal' })
+            vim.api.nvim_buf_set_keymap(0, 'v', '<LocalLeader>sq', '<Plug>RClose', { desc = 'Close terminal' })
+            -- START
             vim.api.nvim_buf_set_keymap(0, 't', '<C-n>', '<Esc>', { desc = 'Quit Terminal' })
+            vim.api.nvim_buf_set_keymap(0, 'n', '<LocalLeader>al', '<Plug>RStart', { desc = 'Start R in then terminal' })
+            vim.api.nvim_buf_set_keymap(0, 'v', '<LocalLeader>al', '<Plug>RStart', { desc = 'Start R in then terminal' })
+            -- EDIT
+            vim.api.nvim_buf_set_keymap(0, 'n', '<LocalLeader>vd', '<Plug>RViewDF', { desc = 'View DataFrame/Matrix in another tab' })
+            vim.api.nvim_buf_set_keymap(0, 'v', '<LocalLeader>vd', '<Plug>RViewDF', { desc = 'View DataFrame/Matrix in another tab' })
+            -- COMMAND
+            -- vim.api.nvim_buf_set_keymap(0, 'n', '<C-l>', '<Plug>RClearConsole', { desc = 'Clear R Console' })
+            -- vim.api.nvim_buf_set_keymap(0, 'v', '<C-l>', '<Plug>RClearConsole', { desc = 'Clear R Console' })
+
+            -- markdown specific commands
+            if vim.bo.filetype == 'rmd' or vim.bo.filetype == 'quarto' then
+              print 'hey, this is a markdown file'
+
+              -- load the pandoc as an enviromental variable to allow pandoc to work.
+              -- FIX: Pandoc seems to be unable to use header when knit is performed on rmd files.
+              -- Try to find the appropriate program to knit rmd files
+              vim.api.nvim_buf_set_keymap(
+                0,
+                'n',
+                '<LocalLeader>pl',
+                '<Cmd>RSourceDir ' .. vim.g.RSTUDIO_PANDOC .. '<CR>',
+                { desc = '[P]andoc [L]oad for rmd and quarto' }
+              )
+            end
           end,
         },
         objbr_mappings = { -- Object browser keymap
@@ -62,10 +81,12 @@ return {
           end,
         },
         disable_cmds = {
-          'RClearConsole',
+          -- 'RClearConsole',
           'RCustomStart',
-          'RSPlot',
+          -- 'RSPlot',
           'RSaveClose',
+          'RSeparatePath',
+          -- 'RStart',
         },
       }
       require('r').setup(opts)

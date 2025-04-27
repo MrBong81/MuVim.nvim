@@ -57,10 +57,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set('n', '<leader>ls', '<cmd>source %<CR>', { desc = '[L]ua [S]ource' })
 vim.keymap.set('n', '<leader>ll', ':.lua<CR>', { desc = '[L]ua [L]ine' })
 vim.keymap.set('v', '<leader>ll', ':lua<CR>', { desc = '[L]ua [L]line {visual mode}' })
+vim.keymap.set('n', '<C-l>', '<C-i>', { noremap = true, desc = 'Jumplist remap for Windows Powershell' })
 
 -- # INSERT MODE
 vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Move focus to the left window' })
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Move focus to the left window' })
+
+-- # COMMAND MODE
+-- vim.keymap.set('c', '<C-m>', '<Up>', { noremap = true, desc = 'Exit terminal mode' })
+-- vim.keymap.set('c', '<C-n>', '<Down>', { noremap = true, desc = 'Exit terminal mode' })
 
 -- # TERMINAL MODE
 vim.keymap.set('t', '<C-n>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
