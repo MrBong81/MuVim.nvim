@@ -1,16 +1,8 @@
-# kickstart-modular.nvim
+# MuVim
 
 ## Introduction
 
-*This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
-
-A starting point for Neovim that is:
-
-* Small
-* Modular
-* Completely Documented
-
-**NOT** a Neovim distribution, but instead a starting point for your configuration.
+*This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration. This is my modification of the basic kickstart config for my personal use.*
 
 ## Installation
 
@@ -35,11 +27,7 @@ External Requirements:
   - If you want to write Golang, you will need `go`
   - etc.
 
-> [!NOTE]
-> See [Install Recipes](#Install-Recipes) for additional Windows and Linux specific notes
-> and quick install snippets
-
-### Install Kickstart
+### Install Muvim
 
 > [!NOTE]
 > [Backup](#FAQ) your previous configuration (if any exists)
