@@ -238,12 +238,12 @@ return {
             },
           },
         },
-        r_language_server = {
-          cmd = { 'R', '--no-echo', '-e', 'languageserver::run()' },
-          filetypes = { 'r', 'rmd', 'quarto' },
-          -- capabilities = {},
-          settings = { diagnostics = false },
-        },
+        -- r_language_server = {
+        --   cmd = { 'R', '--no-echo', '-e', 'languageserver::run()' },
+        --   filetypes = { 'r', 'rmd', 'quarto' },
+        --   -- capabilities = {},
+        --   settings = { diagnostics = false },
+        -- },
       }
 
       -- Ensure the servers and tools above are installed

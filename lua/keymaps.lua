@@ -59,7 +59,8 @@ vim.keymap.set('n', '<leader>ll', ':.lua<CR>', { desc = '[L]ua [L]ine' })
 vim.keymap.set('v', '<leader>ll', ':lua<CR>', { desc = '[L]ua [L]line {visual mode}' })
 vim.keymap.set('n', 'g-', 'v~', { desc = 'Toggle Case' })
 -- vim.keymap.set('n', '<C-l>', '<C-i>', { noremap = true, desc = 'Jumplist remap for Windows Powershell' })
---
+-- Telescope change theme
+vim.keymap.set('n', '<leader>tm', '<cmd>Telescope colorscheme<CR>', { desc = 'Telescope [T]he[M]e' })
 
 -- # INSERT MODE
 vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Move focus to the left window' })
