@@ -210,6 +210,12 @@ return {
       local servers = {
         -- clangd = {},
         gopls = {},
+
+        tailwindcss = {
+          -- filetypes = { 'html' },
+          cmd = { 'tailwindcss-language-server', '--stdio' },
+          workspace_required = false,
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
