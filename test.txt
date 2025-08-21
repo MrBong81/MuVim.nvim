@@ -1,0 +1,122 @@
+Muvim cheatsheet
+
+You can always use which key for help (the buffer that opens when you click something in command mode)
+lead == <Space>
+
+jj : exit insert mode (also jk)
+
+------------------------------------------------------------------
+
+Common and op nvim commands to jump across buffers (never across tabs, PUH!)
+
+Jump between buffers ()
+ctrl + H/J/K/L
+
+Jumplist
+ctrp + o : back on the jumplist
+ctrp + i : forward on the jumplist
+
+if you do jump to character with f + [char] or jump before char t + [char]
+use ; to jump to next occurence in line and , to jump to previous occurence
+
+------------------------------------------------------------------
+
+HARPOON (better marks)
+lead a : [A]dd current page to harpoon list
+lead h : [H]arpoon buffer show
+lead q/w/e/r : jump to first/second/etc etc.. harpoon buffer (after that I believe it's numbers)
+
+------------------------------------------------------------------
+
+UndoTree
+lead tu : [T]oggle [U]ndoTree
+
+------------------------------------------------------------------
+
+Telescope/FuzzyFinder
+
+space + space : search in current buffer
+
+everything else is : 
+space + s + [char]
+
+f : files
+k : keymaps !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+g : grep
+/ : open files
+. : recent files
+n : neovim configuration files
+s : menu with all you could possibly ever want to search over
+
+use ctrl + q to send to QuickFix (read it up)
+(QF shortcuts not yet implemented, but they are op as fuck)
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+mini.ai (better brackets, quotes, tags, and surround stuff better)
+
+cib : change inside next bracket (or dib, delte instead)
+
+usethisforpractice  (usethisforpractice)
+
+------------------------------------------------------------------
+ci[ : change inside next square bracket (ignore "()")
+
+usethisforpractice (usethisforpractice ) [usethisforpractice]
+
+------------------------------------------------------------------
+ciq : change inside quotes
+
+usethisforpractice "usethisforpractice " 'usethisforpractice'
+
+------------------------------------------------------------------
+cit : change inside tag
+
+usethisforpractice <test>usethisforpractice </test> <bubbles>usethisforpractice</bubbles>
+
+------------------------------------------------------------------
+and all the combinations you can come up with
+
+SURROUND:
+type the first two letters very vast:
+sa (surround add)
+sd (surround delete)
+sr (surround replace)
+
+try sa + iw + [b]rackets  and sa + iw + [t]ags
+practice
+
+try sd + b
+(practice)
+
+try sr + ) + ' and sr + q + b (with cursor on the words)
+(practice)
+"practice"
+
+try sa + iw + f
+args
+
+try sa + iw + t
+args
+
+Now the only limit is the sky
+
+--------------------------------------
+
+FILE NAVIGATION:
+- : enter file navigation menu;
+	- : go up the file tree
+	<enter> : go down the directory or open file as buffer
+(remember that you can still use all vim commands to edit the files - especially the jump list and marks)
+
+--------------------------------------
+
+THEME SELECTOR (kanagawa-dragon is the only correct choice)
+
+lead + tm
+
+------------------------------
+
+REMINDER:
+use lead + sk, to get a searchable menu with all the keyboard shortcuts
