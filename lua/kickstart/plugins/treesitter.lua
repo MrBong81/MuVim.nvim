@@ -20,7 +20,7 @@ return {
         'r',
         'rnoweb',
         'yaml',
-        --        'latex',
+        'latex',
         'csv',
       },
       -- Autoinstall languages that are not installed
