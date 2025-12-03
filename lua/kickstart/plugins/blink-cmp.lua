@@ -23,7 +23,7 @@ return {
           {
             'rafamadriz/friendly-snippets',
             config = function()
-              require('luasnip').filetype_extend('rmarkdown', { 'r' })
+              -- require('luasnip').filetype_extend('rmarkdown', { 'r' })
               require('luasnip.loaders.from_vscode').lazy_load()
               -- require('luasnip.loaders.from_lua)').load { paths = './lua/luasnippets' }
               require('luasnip.loaders.from_lua').load { paths = './lua/luasnippets' }
@@ -31,7 +31,12 @@ return {
           },
         },
 
-        opts = {},
+        opts = {
+          -- reduce overhead by deleting snippets history
+          history = false,
+          -- autotrigger snippets enabled
+          enable_autosnippets = true,
+        },
       },
 
       'folke/lazydev.nvim',

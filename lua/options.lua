@@ -66,4 +66,9 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- luasnip, enabling autotrigger
+-- require('luasnip').config.set_config { -- Setting LuaSnip config
+--   -- Enable autotriggered snippets
+--   enable_autosnippets = true,
+-- }
 -- vim: ts=2 sts=2 sw=2 et
